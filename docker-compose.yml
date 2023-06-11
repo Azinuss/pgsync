@@ -7,13 +7,13 @@ services:
       - "15432:5432"
     environment:
       - POSTGRES_USER=pgsync
-      - POSTGRES_PASSWORD=PLEASE_CHANGE_ME
+      - POSTGRES_PASSWORD=${POSTGRES_PASS}
       - POSTGRES_DB=postgres
   redis:
     image: redis
-    command: redis-server --requirepass PLEASE_CHANGE_ME
+    command: redis-server --requirepass ${REDIS_PASS}
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    image: elasticsearch:7.17.9
     ports:
       - "9201:9200"
       - "9301:9300"
@@ -42,13 +42,13 @@ services:
       - PG_USER=pgsync
       - PG_HOST=postgres
       - PG_PORT=5432
-      - PG_PASSWORD=PLEASE_CHANGE_ME
+      - PG_PASSWORD=${POSTGRES_PASS}
       - LOG_LEVEL=INFO
       - ELASTICSEARCH_PORT=9200
       - ELASTICSEARCH_SCHEME=http
       - ELASTICSEARCH_HOST=elasticsearch
       - REDIS_HOST=redis
       - REDIS_PORT=6379
-      - REDIS_AUTH=PLEASE_CHANGE_ME
+      - REDIS_AUTH=${REDIS_PASS}
       - ELASTICSEARCH=true
       - OPENSEARCH=false
