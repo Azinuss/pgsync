@@ -4,7 +4,7 @@
         "index": "postgres",
         "nodes": {
             "table": "shop",
-            "schema": "public",
+            "schema": "shop",
             "columns": [
             ]
         }

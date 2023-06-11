@@ -4,7 +4,7 @@ import click
 import sqlalchemy as sa
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.schema import UniqueConstraint
-import sqlmodel
+
 
 from pgsync.base import create_database, pg_engine
 from pgsync.helper import teardown

@@ -6,7 +6,7 @@
 
 ./wait-for-it.sh $REDIS_HOST:$REDIS_PORT -t 60
 
-EXAMPLE_DIR="examples/schema"
+EXAMPLE_DIR="examples/schemas"
 
 python $EXAMPLE_DIR/schema.py --config $EXAMPLE_DIR/schema.json
 
