@@ -1,0 +1,12 @@
+[
+    {
+        "database": "postgres",
+        "index": "postgres",
+        "nodes": {
+            "table": "shop",
+            "schema": "public",
+            "columns": [
+            ]
+        }
+    }
+]
