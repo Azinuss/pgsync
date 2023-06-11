@@ -4,21 +4,9 @@
       "index": "schemas",
       "nodes": {
          "table": "parent",
-         "schema": "parent",
-         "columns": [],
-         "children": [
-            {
-               "table": "child",
-               "schema": "child",
-               "columns": [
-               ],
-               "label": "children",
-               "relationship": {
-                  "variant": "object",
-                  "type": "one_to_many"
-               }
-            }
-         ]
+         "schema": "public",
+         "columns": []
+         
       }
    }
 ]

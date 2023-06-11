@@ -1,5 +1,7 @@
+from datetime import datetime, timedelta
+
 import click
-from schema import Child, Parent
+from schema import Parent
 from sqlalchemy.orm import sessionmaker
 
 from pgsync.base import pg_engine, subtransactions
@@ -25,17 +27,9 @@ def main(config):
         with subtransactions(session):
             session.add_all(
                 [
-                    Parent(id=1, name="Parent A"),
-                    Parent(id=2, name="Parent B"),
-                    Parent(id=3, name="Parent C"),
-                ]
-            )
-        with subtransactions(session):
-            session.add_all(
-                [
-                    Child(id=1, name="Child A Parent A", parent_id=1),
-                    Child(id=2, name="Child B Parent A", parent_id=2),
-                    Child(id=3, name="Child C Parent B", parent_id=3),
+                    Parent(id=1, name="Avocado", description="The fruit of domestic varieties have smooth, buttery, golden-green flesh when ripe. Depending on the cultivar, avocados have green, brown, purplish, or black skin, and may be pear-shaped, egg-shaped, or spherical. For commercial purposes the fruits are picked while unripe and ripened after harvesting. The nutrient density and extremely high fat content of avocado flesh are useful to a variety of cuisines and are often eaten to enrich vegetarian diets.",count_left="100",create_time=str(datetime.now()),update_time=str(datetime.now())),
+                    Parent(id=2, name="Watermelon", description="is a flowering plant species of the Cucurbitaceae family and the name of its edible fruit. A scrambling and trailing vine-like plant, it is a highly cultivated fruit worldwide, with more than 1,000 varieties.",count_left="100",create_time=str(datetime.now()),update_time=str(datetime.now())),
+                    Parent(id=3, name="lemon", description="is a species of small evergreen trees in the flowering plant family Rutaceae, native to Asia, primarily Northeast India (Assam), Northern Myanmar or China.",count_left="100",create_time=str(datetime.now()),update_time=str(datetime.now())),
                 ]
             )
 
