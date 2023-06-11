@@ -17,11 +17,11 @@ class Shop(Base):
     __tablename__ = "shop"
     __table_args__ = (UniqueConstraint("name","description","count_left","create_time","update_time"),)
     id = sa.Column(sa.Integer, primary_key=True)
-    name = sa.Column('name', sqlmodel.sql.sqltypes.AutoString(length=100), nullable=False)
-    description = sa.Column('description', sqlmodel.sql.sqltypes.AutoString(length=100), nullable=False)
+    name = sa.Column('name', nullable=False)
+    description = sa.Column('description', nullable=False)
     count_left = sa.Column('count_left', sa.Integer(), nullable=False)
-    create_time = sa.Column('create_time', sqlmodel.sql.sqltypes.AutoString(length=100), nullable=False)
-    update_time = sa.Column('update_time', sqlmodel.sql.sqltypes.AutoString(length=100), nullable=False)
+    create_time = sa.Column('create_time', nullable=False)
+    update_time = sa.Column('update_time', nullable=False)
 
 
 
